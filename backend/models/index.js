@@ -17,6 +17,7 @@ db.Company = require('./company')(sequelize, Sequelize);
 db.Invoice = require('./invoice')(sequelize, Sequelize);
 db.InvoiceItem = require('./invoiceItem')(sequelize, Sequelize);
 db.Expense = require('./Expense')(sequelize, Sequelize.DataTypes);
+db.User = require('./User')(sequelize, Sequelize);
 
 // Relations
 db.Invoice.hasMany(db.InvoiceItem, { foreignKey: 'invoiceId' });

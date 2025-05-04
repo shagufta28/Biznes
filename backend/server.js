@@ -9,6 +9,9 @@ const companyRoutes = require('./routes/company.routes');
 const invoiceRoutes = require('./routes/invoice.routes');
 const expenseRoutes = require('./routes/expense.routes');
 const exportRoutes = require('./routes/export.routes');
+const authRoutes = require('./routes/auth.routes');
+const otpRoutes = require('./routes/otp.routes');
+
 
 const app = express();
 app.use(cors());
@@ -33,6 +36,9 @@ app.use('/api/invoices', invoiceRoutes);
 app.use('/uploads', express.static('uploads')); // Serve logos
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/export', exportRoutes);
+
+app.use('/auth', authRoutes);
+app.use('/api/otp', otpRoutes);
 
 // 404 handler
 app.use((req, res, next) => {
